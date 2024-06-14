@@ -1,0 +1,7 @@
+1/1/16, 19:54 - Messages and calls are end-to-end encrypted. No one outside of this chat, not even WhatsApp, can read or listen to them. Tap to learn more.
+1/1/16, 19:23 - PERSON_B created group "GROUP_CHAT"
+1/1/16, 19:54 - PERSON_A added you
+1/2/16, 12:00 - PERSON_A: I am sending a message!
+1/2/16, 12:01 - PERSON_B: I am also sending a message!
+1/2/16, 12:02 - PERSON_C: I am sending a third message!
+1/2/16, 12:03 - PERSON_A: This is my second message in this group chat!

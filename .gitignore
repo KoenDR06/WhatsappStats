@@ -1,1 +1,2 @@
-/chat
+/chat/*
+!/chat/sample-chat.txt
