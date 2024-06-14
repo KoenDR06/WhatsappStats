@@ -2,14 +2,17 @@
 This repository is a program which reads the entire WhatsApp history of a group or personal chat and gives you stats
 about that chat.
 
-# What do I want to support
-- [X] Average time between messages
-- [X] Total message count
-- [X] Who sent how many messages
-- [X] Group chats
-- [X] Average word count per message
-- [X] Word count
-- [ ] Most used words
+# What's supported
+- Average time between messages
+- Total message count
+- Who sent how many messages
+- Group chats
+- Average word count per message
+- Word count
+- Most used words
+
+# What's not supported
+- Viewing media
 
 # Usage
 ## Android

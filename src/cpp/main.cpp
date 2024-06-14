@@ -11,7 +11,7 @@
 using namespace std;
 
 int main() {
-    string fileLocation = "/home/horseman/Programming/WhatsappStats/chat/DadChat.txt";
+    string fileLocation = "/home/horseman/Programming/WhatsappStats/chat/chat.txt";
     ifstream inputFile(fileLocation);
     ifstream countLinesFile(fileLocation);
 
@@ -40,6 +40,7 @@ void processChat(ifstream& file, int lines) {
     long oldEpoch = 0;
 
     map<string, int> personalMessageCounter;
+    map<string, int> personalMediaCounter;
     map<string, int> commonWordMap;
 
     int linesProcessed = 0;
@@ -57,7 +58,7 @@ void processChat(ifstream& file, int lines) {
 
                 vector<string> tokens = splitString(text, ' ');
                 for (const auto& word : tokens) {
-                    if (word == "") {
+                    if (word.empty()) {
                         continue;
                     }
 
@@ -81,6 +82,9 @@ void processChat(ifstream& file, int lines) {
 
             // Who sent this message?
             if (msg.find(": ") != 18446744073709551615) {
+                if (text == "<Media omitted>") {
+                    personalMediaCounter[sender] += 1;
+                }
                 personalMessageCounter[sender] += 1;
             } else {
                 personalMessageCounter["Management of Group Chat"] += 1;
@@ -90,11 +94,21 @@ void processChat(ifstream& file, int lines) {
             text += line;
         }
 
-//        if (lines != -1 && linesProcessed % 128 == 0) {
-//            cout << "\rProcessed: " << linesProcessed << " / " << lines;
-//            cout.flush();
-//        }
         linesProcessed++;
+        if (lines != -1) {
+            cout << "\r[";
+            double completedPercentage = static_cast<double>(linesProcessed) / static_cast<double>(lines);
+            for (int i = 0; i < 100; i++) {
+                if (static_cast<double>(i) / 100 < completedPercentage) {
+                    cout << "#";
+                } else {
+                    cout << "-";
+                }
+            }
+            cout << "] " << static_cast<double>(linesProcessed) / static_cast<double>(lines) * 100.0 << "%";
+
+            cout.flush();
+        }
     }
 
     // Print out the results
@@ -103,7 +117,11 @@ void processChat(ifstream& file, int lines) {
 
     auto it = personalMessageCounter.begin();
     while (it != personalMessageCounter.end()) {
-        cout << "\n\"" << it->first << "\" has sent " << it->second << " messages.";
+        if (it->first != "Management of Group Chat") {
+            cout << "\n\"" << it->first << "\" has sent " << it->second << " messages and " << personalMediaCounter[it->first] << " media items.";
+        } else {
+            cout << "\nThis group has had " << it->second << " updates.";
+        }
         it++;
     }
 
