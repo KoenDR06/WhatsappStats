@@ -49,11 +49,11 @@ cmake_ninja_workdir = /home/horseman/Programming/WhatsappStats/cmake-build-debug
 
 build cmake_object_order_depends_target_WhatsappStats: phony || CMakeFiles/WhatsappStats.dir
 
-build CMakeFiles/WhatsappStats.dir/src/main.cpp.o: CXX_COMPILER__WhatsappStats_unscanned_Debug /home/horseman/Programming/WhatsappStats/src/main.cpp || cmake_object_order_depends_target_WhatsappStats
-  DEP_FILE = CMakeFiles/WhatsappStats.dir/src/main.cpp.o.d
+build CMakeFiles/WhatsappStats.dir/src/cpp/main.cpp.o: CXX_COMPILER__WhatsappStats_unscanned_Debug /home/horseman/Programming/WhatsappStats/src/cpp/main.cpp || cmake_object_order_depends_target_WhatsappStats
+  DEP_FILE = CMakeFiles/WhatsappStats.dir/src/cpp/main.cpp.o.d
   FLAGS = -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/WhatsappStats.dir
-  OBJECT_FILE_DIR = CMakeFiles/WhatsappStats.dir/src
+  OBJECT_FILE_DIR = CMakeFiles/WhatsappStats.dir/src/cpp
 
 
 # =============================================================================
@@ -63,7 +63,7 @@ build CMakeFiles/WhatsappStats.dir/src/main.cpp.o: CXX_COMPILER__WhatsappStats_u
 #############################################
 # Link the executable WhatsappStats
 
-build WhatsappStats: CXX_EXECUTABLE_LINKER__WhatsappStats_Debug CMakeFiles/WhatsappStats.dir/src/main.cpp.o
+build WhatsappStats: CXX_EXECUTABLE_LINKER__WhatsappStats_Debug CMakeFiles/WhatsappStats.dir/src/cpp/main.cpp.o
   OBJECT_DIR = CMakeFiles/WhatsappStats.dir
   POST_BUILD = :
   PRE_LINK = :

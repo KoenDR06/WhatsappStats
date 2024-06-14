@@ -10,7 +10,9 @@ using namespace std;
 #define WHATSAPPSTATS_MAIN_H
 
 int main();
-int processChat(ifstream& file, int lines = -1);
+void processChat(ifstream& file, int lines = -1);
 long calculateEpochTime(const string& dateTime);
+int countWordsInString(const string& str);
+vector<string> splitString(const string& str, const char& delim);
 
 #endif //WHATSAPPSTATS_MAIN_H
