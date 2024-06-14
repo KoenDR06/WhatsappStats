@@ -6,7 +6,7 @@
 #include <iostream>
 #include <string>
 #include <regex>
-#include "../headers/main.h"
+#include "../h/main.h"
 
 using namespace std;
 
