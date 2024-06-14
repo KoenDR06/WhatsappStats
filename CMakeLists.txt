@@ -3,5 +3,5 @@ project(WhatsappStats)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(WhatsappStats main.cpp
-        main.h)
+add_executable(WhatsappStats src/cpp/main.cpp
+        src/h/main.h)
