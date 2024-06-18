@@ -2,7 +2,8 @@
 This repository is a program which reads the entire WhatsApp history of a group or personal chat and gives you stats
 about that chat.
 
-# What's supported
+# Features
+### What's supported
 - Average time between messages
 - Total message count
 - Who sent how many messages
@@ -10,9 +11,21 @@ about that chat.
 - Average word count per message
 - Word count
 - Most used words
+- Locations
 
-# What's not supported
+### What's not supported yet
 - Viewing media
+- Polls
+- Conversation detection
+- Contacts
+- Pings
+- Live locations
+- Message formats that are not `M`/`DD`/`YY`, `HH`:`MM` - `SENDER`: `MESSAGE`
+
+### What's not possible to support
+- Replies. This is simply because the 'Export Chat' option does not write down if the message replies to something, 
+there's nothing I can do about that.
+
 
 # Usage
 ## Android
