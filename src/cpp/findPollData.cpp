@@ -20,7 +20,7 @@ void findPollData(ifstream& file) {
 
     while (!pollLine.empty()) {
         vector<string> tokens = splitString(pollLine, ' ');
-        string voteToken = tokens[tokens.size() - 1];
+        string voteToken = tokens[tokens.size() - 2];
 
         // This spaghetti selects the option and the amount of votes it got and puts it in the poll object
         poll.votes
