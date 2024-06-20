@@ -18,8 +18,41 @@
 
 using namespace std;
 
-int main() {
-    string fileLocation = "/home/horseman/Programming/WhatsappStats/chat/chat.txt";
+int main(int argc, char * argv[]) {
+    if(cmdOptionExists(argv, argv+argc, "--help") ||
+       cmdOptionExists(argv, argv+argc, "-h")) {
+        ifstream helpFile("/home/horseman/Programming/WhatsappStats/assets/help.txt");
+        while (getline(helpFile, line)) {
+            cout << line << "\n";
+        }
+        return 0;
+    }
+
+    char * filename;
+    if (cmdOptionExists(argv, argv+argc, "--file")) {
+        filename = getCmdOption(argv, argv + argc, "--file");
+    } else if (cmdOptionExists(argv, argv+argc, "-f")) {
+        filename = getCmdOption(argv, argv + argc, "-f");
+    } else {
+        cerr << "No input file supplied.\n";
+        return 1;
+    }
+
+    bool displayProgress = true;
+    if (cmdOptionExists(argv, argv+argc, "--quiet")) {
+         displayProgress = false;
+    } else if (cmdOptionExists(argv, argv+argc, "-q")) {
+        displayProgress = false;
+    }
+
+    int format;
+    if (cmdOptionExists(argv, argv+argc, "--format")) {
+        filename = getCmdOption(argv, argv + argc, "--format");
+    } else if (cmdOptionExists(argv, argv+argc, "-F")) {
+        filename = getCmdOption(argv, argv + argc, "-F");
+    }
+
+    string fileLocation = string(filename);
     ifstream inputFile(fileLocation);
     ifstream countLinesFile(fileLocation);
 
@@ -28,17 +61,17 @@ int main() {
 
 
     if (!inputFile.is_open()) {
-        cerr << "Error opening the file!\n";
+        cerr << "Error opening the file.\n";
         return 1;
     }
 
-    processChat(inputFile, lines);
+    processChat(inputFile, lines, displayProgress);
     inputFile.close();
 
     return 0;
 }
 
-void processChat(ifstream& file, int lines) {
+void processChat(ifstream& file, int lines, bool displayProgress) {
     while (getline(file, line)) {
         bool multiLine = false;
         bool countWords = true;
@@ -82,7 +115,7 @@ void processChat(ifstream& file, int lines) {
 
         // Progress Bar
         linesProcessed++;
-        if (lines != -1) {
+        if (displayProgress) {
             cout << "\r[";
             double completedPercentage = static_cast<double>(linesProcessed) / static_cast<double>(lines);
             for (int i = 0; i < 100; i++) {
@@ -99,8 +132,10 @@ void processChat(ifstream& file, int lines) {
     }
 
     // Print out the results
-    cout << "\n---------------------------------------------------------------------------------------------------------------------------"
-            "\nAverage amount of seconds between messages: " << static_cast<double>(epochSum) / static_cast<double>(messageCount);
+    if (displayProgress) {
+        cout << "\n---------------------------------------------------------------------------------------------------------------------------";
+    }
+    cout << "\nAverage amount of seconds between messages: " << static_cast<double>(epochSum) / static_cast<double>(messageCount);
     cout << "\nAmount of messages sent: " << messageCount;
 
     auto personIterator = personalMessageCounter.begin();
@@ -172,4 +207,17 @@ void processChat(ifstream& file, int lines) {
         cout << poll.print() << endl;
 
     cout.flush();
+}
+
+char* getCmdOption(char ** begin, char ** end, const std::string & option) {
+    char ** itr = std::find(begin, end, option);
+    if (itr != end && ++itr != end)
+    {
+        return *itr;
+    }
+    return 0;
+}
+
+bool cmdOptionExists(char** begin, char** end, const std::string& option) {
+    return std::find(begin, end, option) != end;
 }

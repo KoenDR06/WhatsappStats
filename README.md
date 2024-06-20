@@ -15,7 +15,6 @@ about that chat.
 - Polls
 
 ### What's not supported yet
-- Viewing media
 - Conversation detection
 - Contacts
 - Pings
@@ -24,7 +23,7 @@ about that chat.
 
 ### What's not possible to support
 - Replies. This is simply because the 'Export Chat' option does not write down if the message replies to something, 
-there's nothing I can do about that.
+  there's nothing I can do about that.
 
 
 # Usage

@@ -13,7 +13,9 @@ using namespace std;
 #define WHATSAPPSTATS_MAIN_H
 
 
-int main();
-void processChat(ifstream& file, int lines);
+int main(int argc, char * argv[]);
+void processChat(ifstream& file, int lines, bool displayProgress);
+char* getCmdOption(char ** begin, char ** end, const std::string & option);
+bool cmdOptionExists(char** begin, char** end, const std::string& option);
 
 #endif //WHATSAPPSTATS_MAIN_H
