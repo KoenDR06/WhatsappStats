@@ -12,10 +12,10 @@ about that chat.
 - Word count
 - Most used words
 - Locations
+- Polls
 
 ### What's not supported yet
 - Viewing media
-- Polls
 - Conversation detection
 - Contacts
 - Pings

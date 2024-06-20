@@ -55,6 +55,48 @@ build CMakeFiles/WhatsappStats.dir/src/cpp/main.cpp.o: CXX_COMPILER__WhatsappSta
   OBJECT_DIR = CMakeFiles/WhatsappStats.dir
   OBJECT_FILE_DIR = CMakeFiles/WhatsappStats.dir/src/cpp
 
+build CMakeFiles/WhatsappStats.dir/src/cpp/calculateTimeDifference.cpp.o: CXX_COMPILER__WhatsappStats_unscanned_Debug /home/horseman/Programming/WhatsappStats/src/cpp/calculateTimeDifference.cpp || cmake_object_order_depends_target_WhatsappStats
+  DEP_FILE = CMakeFiles/WhatsappStats.dir/src/cpp/calculateTimeDifference.cpp.o.d
+  FLAGS = -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/WhatsappStats.dir
+  OBJECT_FILE_DIR = CMakeFiles/WhatsappStats.dir/src/cpp
+
+build CMakeFiles/WhatsappStats.dir/src/cpp/calculateTimeOfDay.cpp.o: CXX_COMPILER__WhatsappStats_unscanned_Debug /home/horseman/Programming/WhatsappStats/src/cpp/calculateTimeOfDay.cpp || cmake_object_order_depends_target_WhatsappStats
+  DEP_FILE = CMakeFiles/WhatsappStats.dir/src/cpp/calculateTimeOfDay.cpp.o.d
+  FLAGS = -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/WhatsappStats.dir
+  OBJECT_FILE_DIR = CMakeFiles/WhatsappStats.dir/src/cpp
+
+build CMakeFiles/WhatsappStats.dir/src/cpp/countWords.cpp.o: CXX_COMPILER__WhatsappStats_unscanned_Debug /home/horseman/Programming/WhatsappStats/src/cpp/countWords.cpp || cmake_object_order_depends_target_WhatsappStats
+  DEP_FILE = CMakeFiles/WhatsappStats.dir/src/cpp/countWords.cpp.o.d
+  FLAGS = -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/WhatsappStats.dir
+  OBJECT_FILE_DIR = CMakeFiles/WhatsappStats.dir/src/cpp
+
+build CMakeFiles/WhatsappStats.dir/src/cpp/findLocationData.cpp.o: CXX_COMPILER__WhatsappStats_unscanned_Debug /home/horseman/Programming/WhatsappStats/src/cpp/findLocationData.cpp || cmake_object_order_depends_target_WhatsappStats
+  DEP_FILE = CMakeFiles/WhatsappStats.dir/src/cpp/findLocationData.cpp.o.d
+  FLAGS = -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/WhatsappStats.dir
+  OBJECT_FILE_DIR = CMakeFiles/WhatsappStats.dir/src/cpp
+
+build CMakeFiles/WhatsappStats.dir/src/cpp/findPollData.cpp.o: CXX_COMPILER__WhatsappStats_unscanned_Debug /home/horseman/Programming/WhatsappStats/src/cpp/findPollData.cpp || cmake_object_order_depends_target_WhatsappStats
+  DEP_FILE = CMakeFiles/WhatsappStats.dir/src/cpp/findPollData.cpp.o.d
+  FLAGS = -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/WhatsappStats.dir
+  OBJECT_FILE_DIR = CMakeFiles/WhatsappStats.dir/src/cpp
+
+build CMakeFiles/WhatsappStats.dir/src/cpp/findSenderOfMessage.cpp.o: CXX_COMPILER__WhatsappStats_unscanned_Debug /home/horseman/Programming/WhatsappStats/src/cpp/findSenderOfMessage.cpp || cmake_object_order_depends_target_WhatsappStats
+  DEP_FILE = CMakeFiles/WhatsappStats.dir/src/cpp/findSenderOfMessage.cpp.o.d
+  FLAGS = -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/WhatsappStats.dir
+  OBJECT_FILE_DIR = CMakeFiles/WhatsappStats.dir/src/cpp
+
+build CMakeFiles/WhatsappStats.dir/src/cpp/globals.cpp.o: CXX_COMPILER__WhatsappStats_unscanned_Debug /home/horseman/Programming/WhatsappStats/src/cpp/globals.cpp || cmake_object_order_depends_target_WhatsappStats
+  DEP_FILE = CMakeFiles/WhatsappStats.dir/src/cpp/globals.cpp.o.d
+  FLAGS = -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/WhatsappStats.dir
+  OBJECT_FILE_DIR = CMakeFiles/WhatsappStats.dir/src/cpp
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target WhatsappStats
@@ -63,7 +105,7 @@ build CMakeFiles/WhatsappStats.dir/src/cpp/main.cpp.o: CXX_COMPILER__WhatsappSta
 #############################################
 # Link the executable WhatsappStats
 
-build WhatsappStats: CXX_EXECUTABLE_LINKER__WhatsappStats_Debug CMakeFiles/WhatsappStats.dir/src/cpp/main.cpp.o
+build WhatsappStats: CXX_EXECUTABLE_LINKER__WhatsappStats_Debug CMakeFiles/WhatsappStats.dir/src/cpp/main.cpp.o CMakeFiles/WhatsappStats.dir/src/cpp/calculateTimeDifference.cpp.o CMakeFiles/WhatsappStats.dir/src/cpp/calculateTimeOfDay.cpp.o CMakeFiles/WhatsappStats.dir/src/cpp/countWords.cpp.o CMakeFiles/WhatsappStats.dir/src/cpp/findLocationData.cpp.o CMakeFiles/WhatsappStats.dir/src/cpp/findPollData.cpp.o CMakeFiles/WhatsappStats.dir/src/cpp/findSenderOfMessage.cpp.o CMakeFiles/WhatsappStats.dir/src/cpp/globals.cpp.o
   OBJECT_DIR = CMakeFiles/WhatsappStats.dir
   POST_BUILD = :
   PRE_LINK = :

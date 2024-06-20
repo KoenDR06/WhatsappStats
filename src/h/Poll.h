@@ -15,6 +15,15 @@ class Poll {
         string title;
         string owner;
         map<string, int> votes;
+        [[nodiscard]] string print() const {
+            string str = "Title: " + this->title + "\t\tOwner: " + this->owner + "\n";
+
+            for(const auto& vote : this->votes) {
+                str += "*\t\t" + vote.first + ": " + to_string(vote.second) + " votes\n";
+            }
+
+            return str;
+        }
 };
 
 
