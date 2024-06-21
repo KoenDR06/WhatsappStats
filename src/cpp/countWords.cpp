@@ -15,7 +15,7 @@ int countWordsInString(const string& str) {
             spaceCount++;
         }
         if (ch == '\n') {
-            cerr << "How?\n";
+            coutError("How?\n");
         }
     }
     return spaceCount + 1;
@@ -34,6 +34,6 @@ void countWordsOfMessage() {
             continue;
         }
 
-        commonWordMap[word] += 1;
+        commonWordMap[lowerCaseWord] += 1;
     }
 }

@@ -1,10 +1,24 @@
-SHORT   LONG        USAGE               EXPLANATION
--f      --file      -f FILE_PATH        The file you want to be processed
--F      --format    -F 0                The format the program should read dates and time. Below is a table of supported formats and their codes.
--h      --help      -h                  Displays this list
--q      --quiet     -q                  Hides the progress bar
+LONG            USAGE                           EXPLANATION
+--file          --file FILE_PATH                The file you want to be processed
+--format        --format 0                      The format the program should use for reading dates, time, files, etc. Below is a table of supported formats and their codes.
+--help          --help                          Displays this list
+--quiet         --quiet                         Hides the progress bar
+--print_stats   --print_stats STAT_1,STAT_n     The stats the program should output after finishing calculations. Below is a table of stats you can turn on and off.
 
 
 DATETIME FORMATS
 CODE    FORMAT
 0       M/DD/YY, HH:MM - SENDER: MESSAGE
+1       DD-MM-YYYY HH:MM - SENDER: MESSAGE
+
+
+STATS
+time_between_msgs
+msg_count
+msg_count_personal
+avg_words_per_msg
+word_count
+common_words
+common_times
+locations
+polls

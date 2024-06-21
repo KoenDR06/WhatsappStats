@@ -5,6 +5,7 @@
 #include <iostream>
 #include <map>
 #include <vector>
+#include <regex>
 #include "Poll.h"
 
 using namespace std;
@@ -15,6 +16,8 @@ using namespace std;
 extern int linesProcessed;
 extern int messageCount;
 extern int wordCount;
+extern int pollVoteOffset;
+extern int dateTimeFormat;
 
 extern long epochSum;
 extern long oldEpoch;
@@ -32,9 +35,25 @@ extern string text;
 extern string dateTime;
 extern string sender;
 extern string msg;
+extern string noMediaAttachedIdentifier;
+extern string pollIdentifier;
+
+extern regex pattern;
+extern regex locationIdentifier;
+
+extern bool printTimeBetweenMessages;
+extern bool printMessageCount;
+extern bool printPersonalMessageCount;
+extern bool printAverageWordsPerMessage;
+extern bool printWordCount;
+extern bool printCommonWords;
+extern bool printCommonTimes;
+extern bool printLocations;
+extern bool printPolls;
 
 vector<string> splitString(const string& str, const char& delim);
-void padTime(string &str, const size_t num);
+void padTime(string &str, size_t num);
 string convertToTimeStampString(int timeStamp);
+void coutError(const string& s);
 
 #endif //WHATSAPPSTATS_GLOBALS_H

@@ -13,17 +13,16 @@ about that chat.
 - Most used words
 - Locations
 - Polls
+- Different types of export formats
 
 ### What's not supported yet
 - Conversation detection
 - Contacts
 - Pings
-- Live locations
-- Message formats that are not `M`/`DD`/`YY`, `HH`:`MM` - `SENDER`: `MESSAGE`
 
 ### What's not possible to support
-- Replies. This is simply because the 'Export Chat' option does not write down if the message replies to something, 
-  there's nothing I can do about that.
+- Replies. This is because the 'Export Chat' option does not record if the message replies to something.
+- Reaction. This is because the 'Export Chat' option does not record if the message has been reacted to.
 
 
 # Usage

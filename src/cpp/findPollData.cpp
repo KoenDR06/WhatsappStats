@@ -8,7 +8,7 @@
 
 
 
-void findPollData(ifstream& file) {
+void findPollData(ifstream& file, int pollVoteOffset) {
     string pollLine;
     getline(file, pollLine);
 
@@ -25,7 +25,7 @@ void findPollData(ifstream& file) {
         // This spaghetti selects the option and the amount of votes it got and puts it in the poll object
         poll.votes
         [pollLine.substr(pollLine.find(": ") + 2, pollLine.find(" (") - pollLine.find(": ") - 2)] =
-                stoi(voteToken.substr(1, voteToken.length() - 1));
+                stoi(voteToken.substr(pollVoteOffset, voteToken.length() - 1));
 
         getline(file, pollLine);
     }

@@ -8,6 +8,8 @@
 int linesProcessed = 0;
 int messageCount = 0;
 int wordCount = 0;
+int pollVoteOffset;
+int dateTimeFormat;
 
 long epochSum = 0;
 long oldEpoch = 0;
@@ -25,6 +27,21 @@ string text;
 string dateTime;
 string sender;
 string msg;
+string noMediaAttachedIdentifier;
+string pollIdentifier;
+
+regex pattern;
+regex locationIdentifier;
+
+bool printTimeBetweenMessages = false;
+bool printMessageCount = false;
+bool printPersonalMessageCount = false;
+bool printAverageWordsPerMessage = false;
+bool printWordCount = false;
+bool printCommonWords = false;
+bool printCommonTimes = false;
+bool printLocations = false;
+bool printPolls = false;
 
 vector<string> splitString(const string& str, const char& delim) {
     stringstream ss(str);
@@ -54,4 +71,8 @@ void padTime(string &str, const size_t num) {
     if(num > str.size()) {
         str.insert(0, num - str.size(), '0');
     }
+}
+
+void coutError(const string& s) {
+    cerr << "\x1B[31m" << s << "\033[0m";
 }

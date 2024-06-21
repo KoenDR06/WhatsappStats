@@ -8,6 +8,6 @@
 #ifndef WHATSAPPSTATS_FINDPOLLDATA_H
 #define WHATSAPPSTATS_FINDPOLLDATA_H
 
-void findPollData(std::ifstream& file);
+void findPollData(std::ifstream& file, int pollVoteOffset);
 
 #endif //WHATSAPPSTATS_FINDPOLLDATA_H
