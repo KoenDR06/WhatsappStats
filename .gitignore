@@ -1,3 +1,2 @@
-/chat/*
-!/chat/sample-chat.txt
+/chats/*
 /cmake-build-debug/*
